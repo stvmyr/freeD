@@ -7,7 +7,7 @@ freeD is a very simple protocol used to exchange camera tracking data. It was or
 The original protocol documentation can be found here:
 https://www.manualsdir.com/manuals/641433/vinten-radamec-free-d.html
 
-Note that the original system is designed to transmit the Data via RS232 or RS422. 
+Note that the original system is designed to transmit its data via RS232 or RS422. 
 See manual section A.3 to get a detailed look of what's going on.
 
 If you need support or have a idea to make this library better, don't hesitate to contact me... :)
@@ -20,7 +20,7 @@ go get github.com/stvmyr/freeD
 ## Functions
 
 ### freeD.Decode()
-Decode takes a byte array (typically received via UDP nowadays), parses the data and returns a freeD struct and error. Only if the Internal checksum calculation failes, an error is returned. 
+Decode takes a byte array (typically received via UDP nowadays), parses the data and returns a freeD struct and error. Only if the Internal checksum validation failes, an error is returned. 
 
 ### freeD.Encode()
 Encode takes a freeD struct as described below, and generates a byte array in the freeD format. This array can then transmitted via UDP.
@@ -50,9 +50,9 @@ A typical freeD package contains 29 Bytes:
 | ----------- | ----------------- |-------------------------------- |
 | 0           | Identifier        | Message Type. The Encode function always uses 0xD1. (see freeD manual section A.3.1 for further information) |
 | 1           | ID                | Camera ID. This is a relict when using multiple Systems via RS232 or RS422. |
-| 2:5         | Pitch             | Camera Pitch described in degree.|
-| 5:8         | Yaw               | Camera Yaw described in degree.|
-| 8:11        | Roll              | Camera Roll described in degree.|
+| 2:5         | Pitch             | Camera Pitch angle described in degree.|
+| 5:8         | Yaw               | Camera Yaw angle described in degree.|
+| 8:11        | Roll              | Camera Roll angle described in degree.|
 | 11:14       | Position Z        | Camera Z Offset from origin. Typically described in millimeter. |
 | 14:17       | Position Y        | Camera Y Offset from origin. Typically described in millimeter. |
 | 17:20       | Position X        | Camera X Offset from origin. Typically described in millimeter. |
