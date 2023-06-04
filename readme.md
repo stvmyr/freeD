@@ -2,9 +2,9 @@
 ## A simple freeD tracking protocol implementation written in golang 
 
 ### What is freeD?
-freeD is a very simple protocol used to exchange camera tracking data. It was originally developed by Vinten and is now supported by a wide range of hard- and software including Unreal Engine, disguise, stYpe, Mo-Sys and Panasonic. 
+freeD is a very simple protocol used to exchange camera tracking data. It was originally developed by BBC R&D and is now supported by a wide range of hard- and software including Unreal Engine, disguise, stYpe, Mo-Sys and Panasonic. 
 
-The original protocol documentation can be found here:
+You can find some documentation by Vinten that includes a deeper look into the protocol here:
 https://www.manualsdir.com/manuals/641433/vinten-radamec-free-d.html
 
 Note that the original system is designed to transmit its data via RS232 or RS422. 
